@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>援光 HelpLight — 灾害求助信息结构化与分诊台</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+         margin: 0; color: #222; background: #f7f7f5; line-height: 1.55; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 16px; }
+  header { border-bottom: 2px solid #b3392e; padding-bottom: 8px; }
+  h1 { font-size: 24px; margin: 8px 0 2px; }
+  h1 .en { color: #666; font-size: 16px; font-weight: normal; }
+  .sub { color: #555; margin: 2px 0 8px; }
+  .notice { background: #fdf3e7; border: 1px solid #e0b27a; border-radius: 6px;
+            padding: 8px 12px; font-size: 13px; margin: 12px 0; }
+  section { background: #fff; border: 1px solid #ddd; border-radius: 6px;
+            padding: 14px 16px; margin: 14px 0; }
+  h2 { font-size: 17px; margin: 0 0 8px; }
+  textarea { width: 100%; min-height: 110px; padding: 8px; font-size: 14px;
+             border: 1px solid #bbb; border-radius: 4px; resize: vertical; }
+  button { font-size: 14px; padding: 6px 14px; margin: 6px 6px 0 0;
+           border: 1px solid #888; border-radius: 4px; background: #fff; cursor: pointer; }
+  button.primary { background: #b3392e; border-color: #b3392e; color: #fff; }
+  button:disabled { opacity: .5; cursor: wait; }
+  .hint { color: #777; font-size: 12px; }
+  .card { border: 1px solid #ccc; border-left: 5px solid #888; border-radius: 4px;
+          padding: 10px 14px; margin-top: 12px; background: #fffdfa; }
+  .card dl { display: grid; grid-template-columns: 84px 1fr; gap: 2px 10px; margin: 6px 0; font-size: 14px; }
+  .card dt { color: #666; }
+  .card dd { margin: 0; }
+  .urg { display: inline-block; padding: 0 8px; border-radius: 8px; color: #fff; font-size: 13px; }
+  .urg-高 { background: #c0271a; } .urg-中 { background: #d98a06; } .urg-低 { background: #5b8c5a; }
+  .card.u高 { border-left-color: #c0271a; } .card.u中 { border-left-color: #d98a06; } .card.u低 { border-left-color: #5b8c5a; }
+  .flag { color: #b35c00; font-size: 12px; }
+  .flag.err { color: #c0271a; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 10px; }
+  th, td { border: 1px solid #ccc; padding: 5px 7px; text-align: left; vertical-align: top; }
+  th { background: #f0eeea; }
+  td.orig { color: #666; max-width: 200px; word-break: break-all; }
+  footer { color: #555; font-size: 13px; border-top: 1px solid #ccc; margin-top: 18px; padding-top: 10px; }
+  .err { color: #c0271a; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>援光 HelpLight <span class="en">— 灾害求助信息结构化与分诊台</span></h1>
+  <p class="sub">把散落在群聊、社交平台里的口语化求助文本，整理成按紧急程度排序的结构化分诊清单。抽取、研判与摘要全部由本地运行的 Spark-X2.6-4B 完成。</p>
+</header>
+
+<div class="notice">
+  <strong>边界声明：</strong>本工具为原型工具，<strong>不替代 110 / 119 / 120 与官方救援调度</strong>；
+  模型抽取结果<strong>必须经人工复核</strong>后才能用于救援行动；联系方式等个人信息<strong>仅在本机处理</strong>，不上传任何云端。
+</div>
+
+<section>
+  <h2>① 单条求助解析</h2>
+  <textarea id="singleInput" placeholder="粘贴一条原始求助文本，例如：XX小区3号楼一家四口被困，水淹到一楼，急需饮用水……"></textarea>
+  <div>
+    <button class="primary" id="btnSingle">解析这一条</button>
+    <span class="hint" id="singleStatus"></span>
+  </div>
+  <div id="singleResult"></div>
+</section>
+
+<section>
+  <h2>② 批量分诊清单</h2>
+  <textarea id="batchInput" placeholder="粘贴多条求助文本，每条之间空一行（空行分隔）。解析后自动按紧急程度 高 &gt; 中 &gt; 低 排序。"></textarea>
+  <div>
+    <button id="btnExamples">一键载入 3 条示例</button>
+    <button class="primary" id="btnBatch">解析全部并生成清单</button>
+    <button id="btnExportMd" disabled>导出 Markdown</button>
+    <button id="btnExportCsv" disabled>导出 CSV</button>
+    <span class="hint" id="batchStatus"></span>
+  </div>
+  <div id="batchResult"></div>
+</section>
+
+<footer>
+  <p>援光 HelpLight · HER Hack-Astron #7 参赛原型 · 模型：Spark-X2.6-4B（本地推理，OpenAI 兼容端点）</p>
+  <p>再次提醒：本工具不替代 110 / 119 / 120；抽取结果需人工复核；所有数据仅在本地处理，不经过任何云端服务。示例文本均为脱敏虚构内容。</p>
+</footer>
+
+</div>
+
+<script>
+"use strict";
+let currentRows = [];   // 当前分诊清单（供导出）
+
+function esc(s) {
+  return String(s == null ? "" : s)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function flagsHtml(r) {
+  let h = "";
+  if (r.parse_failed) h += ' <span class="flag err">⚠ 解析失败，内容为兜底记录，请人工核对原文</span>';
+  else if (r.retried) h += ' <span class="flag">（首次解析失败，已自动重试成功）</span>';
+  return h;
+}
+
+function cardHtml(r) {
+  return '<div class="card u' + esc(r.urgency) + '">' +
+    '<span class="urg urg-' + esc(r.urgency) + '">紧急程度：' + esc(r.urgency) + '</span>' + flagsHtml(r) +
+    '<dl>' +
+    '<dt>地点</dt><dd>' + esc(r.location) + '</dd>' +
+    '<dt>人数</dt><dd>' + esc(r.people_count) + (r.people_notes ? '（' + esc(r.people_notes) + '）' : '') + '</dd>' +
+    '<dt>需求</dt><dd>' + esc((r.needs || []).join("、") || "—") + '</dd>' +
+    '<dt>联系方式</dt><dd>' + esc(r.contact || "—") + '</dd>' +
+    '<dt>摘要</dt><dd>' + esc(r.summary) + '</dd>' +
+    '<dt>EN</dt><dd>' + esc(r.summary_en) + '</dd>' +
+    '<dt>原文</dt><dd class="hint">' + esc(r.original) + '</dd>' +
+    '</dl></div>';
+}
+
+function tableHtml(rows) {
+  let h = '<table><thead><tr>' +
+    '<th>#</th><th>紧急</th><th>地点</th><th>人数 / 构成</th><th>需求</th>' +
+    '<th>联系方式</th><th>摘要</th><th>英文摘要</th><th>原文</th></tr></thead><tbody>';
+  rows.forEach(function (r, i) {
+    h += '<tr><td>' + (i + 1) + '</td>' +
+      '<td><span class="urg urg-' + esc(r.urgency) + '">' + esc(r.urgency) + '</span>' + flagsHtml(r) + '</td>' +
+      '<td>' + esc(r.location) + '</td>' +
+      '<td>' + esc(r.people_count) + (r.people_notes ? '<br>' + esc(r.people_notes) : '') + '</td>' +
+      '<td>' + esc((r.needs || []).join("、")) + '</td>' +
+      '<td>' + esc(r.contact) + '</td>' +
+      '<td>' + esc(r.summary) + '</td>' +
+      '<td>' + esc(r.summary_en) + '</td>' +
+      '<td class="orig">' + esc(r.original) + '</td></tr>';
+  });
+  return h + '</tbody></table>';
+}
+
+async function postJson(url, body) {
+  const resp = await fetch(url, {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(body)
+  });
+  const data = await resp.json();
+  if (!resp.ok) throw new Error(data.error || ("HTTP " + resp.status));
+  return data;
+}
+
+const $ = function (id) { return document.getElementById(id); };
+
+$("btnSingle").addEventListener("click", async function () {
+  const text = $("singleInput").value.trim();
+  if (!text) { $("singleStatus").textContent = "请先粘贴一条求助文本。"; return; }
+  this.disabled = true; $("singleStatus").textContent = "正在调用本地模型解析…";
+  try {
+    const data = await postJson("/api/parse", {text: text});
+    $("singleResult").innerHTML = cardHtml(data.result);
+    $("singleStatus").textContent = "完成。";
+  } catch (e) {
+    $("singleStatus").innerHTML = '<span class="err">解析请求失败：' + esc(e.message) + '</span>';
+  } finally { this.disabled = false; }
+});
+
+$("btnExamples").addEventListener("click", async function () {
+  try {
+    const resp = await fetch("/api/examples");
+    const data = await resp.json();
+    $("batchInput").value = data.examples.map(function (e) { return e.text; }).join("\n\n");
+    $("batchStatus").textContent = "已载入 " + data.examples.length + " 条脱敏虚构示例（洪涝 / 地震 / 独居老人断药），点「解析全部」试试。";
+  } catch (e) {
+    $("batchStatus").innerHTML = '<span class="err">载入示例失败：' + esc(e.message) + '</span>';
+  }
+});
+
+$("btnBatch").addEventListener("click", async function () {
+  const text = $("batchInput").value.trim();
+  if (!text) { $("batchStatus").textContent = "请先粘贴文本，或点「一键载入示例」。"; return; }
+  this.disabled = true; $("batchStatus").textContent = "正在逐条解析并排序…";
+  try {
+    const data = await postJson("/api/parse-batch", {text: text});
+    currentRows = data.results;
+    $("batchResult").innerHTML = tableHtml(currentRows);
+    $("batchStatus").textContent = "完成：共 " + data.count + " 条，已按紧急程度排序。";
+    $("btnExportMd").disabled = false;
+    $("btnExportCsv").disabled = false;
+  } catch (e) {
+    $("batchStatus").innerHTML = '<span class="err">批量解析失败：' + esc(e.message) + '</span>';
+  } finally { this.disabled = false; }
+});
+
+// ---------- 导出 ----------
+function download(filename, content, mime) {
+  const blob = new Blob([content], {type: mime + ";charset=utf-8"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  document.body.appendChild(a); a.click();
+  setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 300);
+}
+
+function buildMarkdown(rows) {
+  let md = "# 援光 HelpLight 分诊清单\n\n" +
+    "> 原型工具输出，不替代 110/119/120；抽取结果需人工复核；数据仅本地处理。\n\n" +
+    "| # | 紧急 | 地点 | 人数 | 人员构成 | 需求 | 联系方式 | 摘要 | 英文摘要 |\n" +
+    "|---|------|------|------|----------|------|----------|------|----------|\n";
+  const cell = function (s) { return String(s == null ? "" : s).replace(/\|/g, "｜").replace(/\n/g, " "); };
+  rows.forEach(function (r, i) {
+    md += "| " + (i + 1) + " | " + cell(r.urgency) + " | " + cell(r.location) + " | " +
+      cell(r.people_count) + " | " + cell(r.people_notes) + " | " + cell((r.needs || []).join("、")) +
+      " | " + cell(r.contact) + " | " + cell(r.summary) + " | " + cell(r.summary_en) + " |\n";
+  });
+  md += "\n## 原文\n\n";
+  rows.forEach(function (r, i) { md += (i + 1) + ". " + String(r.original || "").replace(/\n/g, " ") + "\n"; });
+  return md;
+}
+
+function csvCell(s) {
+  s = String(s == null ? "" : s);
+  return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+}
+
+function buildCsv(rows) {
+  const head = ["序号", "紧急程度", "地点", "人数", "人员构成", "需求", "联系方式", "摘要", "英文摘要", "原文"];
+  let out = head.join(",") + "\r\n";
+  rows.forEach(function (r, i) {
+    out += [i + 1, r.urgency, r.location, r.people_count, r.people_notes,
+            (r.needs || []).join("、"), r.contact, r.summary, r.summary_en, r.original]
+      .map(csvCell).join(",") + "\r\n";
+  });
+  return "﻿" + out;   // BOM 便于 Excel 正确识别 UTF-8
+}
+
+$("btnExportMd").addEventListener("click", function () {
+  if (currentRows.length) download("helplight-triage.md", buildMarkdown(currentRows), "text/markdown");
+});
+$("btnExportCsv").addEventListener("click", function () {
+  if (currentRows.length) download("helplight-triage.csv", buildCsv(currentRows), "text/csv");
+});
+</script>
+</body>
+</html>

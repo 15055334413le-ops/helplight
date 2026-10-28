@@ -1,0 +1,36 @@
+{
+  "elapsed_sec": 245.49,
+  "input_order": [
+    "E10",
+    "E06",
+    "E01"
+  ],
+  "input_urgency": [
+    "低",
+    "中",
+    "高"
+  ],
+  "returned": [
+    {
+      "seq": 1,
+      "id": "E01",
+      "urgency": "高",
+      "retried": false,
+      "parse_failed": false
+    },
+    {
+      "seq": 2,
+      "id": "E06",
+      "urgency": "中",
+      "retried": false,
+      "parse_failed": false
+    },
+    {
+      "seq": 3,
+      "id": "E10",
+      "urgency": "低",
+      "retried": false,
+      "parse_failed": false
+    }
+  ]
+}

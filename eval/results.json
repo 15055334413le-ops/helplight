@@ -1,0 +1,304 @@
+[
+  {
+    "id": "E01",
+    "tag": "洪涝被困-老人婴儿",
+    "gold_urgency": "高",
+    "elapsed_sec": 110.37,
+    "retried": false,
+    "parse_failed": false,
+    "error": "",
+    "result": {
+      "location": "望江县华阳镇金堤村",
+      "people_count": 3,
+      "people_notes": "老人、婴儿",
+      "needs": [
+        "救援（派船接人）"
+      ],
+      "urgency": "高",
+      "contact": "139****5730",
+      "summary": "望江县华阳镇金堤村3人因江水漫堤被困，急需救援。",
+      "summary_en": "Three people in Jin迪村, Huayang Town, Wangjiang County are trapped due to rising floodwaters and urgently need rescue.",
+      "original": "求救！我们是望江县华阳镇金堤村的，江水漫堤了，家里房子进水快一米了，我和老伴还有刚满月的孙子三个人困在二楼下不来，手机也快没电了，麻烦派船来接我们出去，电话139****5730，快点啊！",
+      "retried": false,
+      "parse_failed": false,
+      "error": ""
+    }
+  },
+  {
+    "id": "E02",
+    "tag": "地震重伤-碎片消息",
+    "gold_urgency": "高",
+    "elapsed_sec": 89.87,
+    "retried": false,
+    "parse_failed": false,
+    "error": "",
+    "result": {
+      "location": "临夏县城关镇东门巷老楼",
+      "people_count": 1,
+      "people_notes": "伤员（腿部受伤、流血）",
+      "needs": [
+        "救护车",
+        "消防救援"
+      ],
+      "urgency": "高",
+      "contact": "152****8841",
+      "summary": "临夏县城关镇东门巷老楼塌陷，一名伤员被困流血，急需救护车与消防救援。",
+      "summary_en": "A wounded person trapped under a collapsed building in Dongmen Lane, Chengguan Town, Linxia is bleeding, and urgent medical aid and fire rescue are needed.",
+      "original": "地震了 临夏县城关镇东门巷老楼塌了一半 我爸被压在柜子下面 腿动不了 一直流血 快来人 快派救护车跟消房 电话是我的152****8841",
+      "retried": false,
+      "parse_failed": false,
+      "error": ""
+    }
+  },
+  {
+    "id": "E03",
+    "tag": "台风-轮椅残障独居",
+    "gold_urgency": "高",
+    "elapsed_sec": 86.58,
+    "retried": false,
+    "parse_failed": false,
+    "error": "",
+    "result": {
+      "location": "阳江市江城区城南街道海怡小区2栋一楼",
+      "people_count": 1,
+      "people_notes": "坐轮椅",
+      "needs": [
+        "转移至安全地点"
+      ],
+      "urgency": "高",
+      "contact": "136****0925",
+      "summary": "阳江江城区一户独居坐轮椅居民家中进水被困，需转移至安全地点。",
+      "summary_en": "A resident living alone in a wheelchair in Jiangcheng District, Yangjiang, is trapped by rising water in their home and needs to be moved to a safe place.",
+      "original": "台风登陆了，阳江市江城区城南街道海怡小区2栋一楼，我是坐轮椅的，一个人住，地下车库的水已经漫进家里，水过脚踝了还在涨，我自己出不去，麻烦志愿者来帮我转移到安全的地方，我的电话是136****0925。",
+      "retried": false,
+      "parse_failed": false,
+      "error": ""
+    }
+  },
+  {
+    "id": "E04",
+    "tag": "儿童走失协助",
+    "gold_urgency": "高",
+    "elapsed_sec": 89.48,
+    "retried": false,
+    "parse_failed": false,
+    "error": "",
+    "result": {
+      "location": "泗洪县青阳镇安置点附近（镇政府门口）",
+      "people_count": 1,
+      "people_notes": "7岁儿童，有哮喘",
+      "needs": [
+        "寻找走失儿童"
+      ],
+      "urgency": "高",
+      "contact": "159****3347",
+      "summary": "7岁哮喘儿童在泗洪县青阳镇安置点附近走失，王女士求助寻人。",
+      "summary_en": "A 7-year-old child with asthma went missing near the resettlement point in Qingyang Town, Sihong County, and Wang女士 is seeking help to find her.",
+      "original": "寻人！我女儿今年7岁，穿黄色雨衣，在转移的时候在泗洪县青阳镇安置点附近走散了，最后看到是下午三点在镇政府门口，孩子有哮喘，我急死了，求大家帮忙留意，联系电话159****3347，王女士。",
+      "retried": false,
+      "parse_failed": false,
+      "error": ""
+    }
+  },
+  {
+    "id": "E05",
+    "tag": "洪涝重伤-信息缺失",
+    "gold_urgency": "高",
+    "elapsed_sec": 81.32,
+    "retried": false,
+    "parse_failed": false,
+    "error": "",
+    "result": {
+      "location": "阜阳市颍上县迪沟镇堤外村",
+      "people_count": 2,
+      "people_notes": "老人",
+      "needs": [
+        "救援帮助"
+      ],
+      "urgency": "高",
+      "contact": "",
+      "summary": "颍上县迪沟镇堤外村一户老人摔断腿被困，水已到大腿，急需救援。",
+      "summary_en": "An elderly person in Digou Town, Yingshang County, Fuyang City is trapped indoors with a broken leg, and water has reached his legs, requiring urgent rescue.",
+      "original": "转发求扩散，阜阳市颍上县迪沟镇堤外村里有一户人家，老人摔断了腿困在屋里出不来，水都到大腿了，家里好像就老两口住，具休还有没有别人不清楚，也没留电话，看到的人帮忙联系镇里的救援队去看看。",
+      "retried": false,
+      "parse_failed": false,
+      "error": ""
+    }
+  },
+  {
+    "id": "E06",
+    "tag": "安置点物资登记",
+    "gold_urgency": "中",
+    "elapsed_sec": 97.27,
+    "retried": false,
+    "parse_failed": false,
+    "error": "",
+    "result": {
+      "location": "泸定县磨西镇体育馆安置点",
+      "people_count": 47,
+      "people_notes": "",
+      "needs": [
+        "棉被",
+        "奶粉"
+      ],
+      "urgency": "中",
+      "contact": "李组长，电话135****7712",
+      "summary": "泸定县磨西镇体育馆安置点47人，缺棉被20条及奶粉，需协调。",
+      "summary_en": "47 people at the Moxi Town Gymnasium Settlement Point in Luding County need 20 more quilts and milk powder, and coordination is requested.",
+      "original": "泸定县磨西镇体育馆安置点登记一下：我们这一组一共收了47个人，今晚帐篷还够，就是棉被还差20条，还有小孩子喝的奶粉没有了，麻烦协调一下，联系人李组长，电话135****7712。",
+      "retried": false,
+      "parse_failed": false,
+      "error": ""
+    }
+  },
+  {
+    "id": "E07",
+    "tag": "洪涝转移后食物短缺",
+    "gold_urgency": "中",
+    "elapsed_sec": 96.71,
+    "retried": false,
+    "parse_failed": false,
+    "error": "",
+    "result": {
+      "location": "六安市金安区张店镇",
+      "people_count": 200,
+      "people_notes": "有老人、小孩",
+      "needs": [
+        "米面",
+        "热水"
+      ],
+      "urgency": "中",
+      "contact": "138****6609",
+      "summary": "六安市金安区张店镇200余人转移至镇中学，需米面与热水。",
+      "summary_en": "About 200 people in Zhangdian Town, Jin'an District, Lu'an City have been relocated to the second floor of the town middle school and need rice, noodles, and hot water.",
+      "original": "六安市金安区张店镇的乡亲们都转移到镇中学二楼了，人都安全，就是吃的跟不上，两百多号人只有方便面，老人小孩又多，最好能送点米面和热水过来，负责人电话138****6609。",
+      "retried": false,
+      "parse_failed": false,
+      "error": ""
+    }
+  },
+  {
+    "id": "E08",
+    "tag": "独居老人物资代购",
+    "gold_urgency": "中",
+    "elapsed_sec": 101.88,
+    "retried": false,
+    "parse_failed": false,
+    "error": "",
+    "result": {
+      "location": "淮安市洪泽区高良涧街道临河小区",
+      "people_count": 1,
+      "people_notes": "82岁独居老人，腿脚不便",
+      "needs": [
+        "米面油"
+      ],
+      "urgency": "中",
+      "contact": "133****2258",
+      "summary": "淮安洪泽区临河小区82岁独居老人腿脚不便，需志愿者代购米面油送上门。",
+      "summary_en": "An 82-year-old alone elderly person in Linhe Community, Hongze District, Huai'an, has limited mobility and needs volunteers to deliver purchased rice, oil and flour to her home.",
+      "original": "社区登记一下：我是淮安市洪泽区高良涧街道的网格员，临河小区独居的赵奶奶82岁，家里米油快吃完了，她腿脚不便下不了楼，想请志愿者帮忙代购一些米面油送上门，不着急，电话是她儿子的133****2258。",
+      "retried": false,
+      "parse_failed": false,
+      "error": ""
+    }
+  },
+  {
+    "id": "E09",
+    "tag": "台风后停水断粮风险",
+    "gold_urgency": "中",
+    "elapsed_sec": 82.48,
+    "retried": false,
+    "parse_failed": false,
+    "error": "",
+    "result": {
+      "location": "汕头市潮南区峡山街道",
+      "people_count": 0,
+      "people_notes": "",
+      "needs": [
+        "饮用水"
+      ],
+      "urgency": "中",
+      "contact": "137****9013",
+      "summary": "汕头市潮南区峡山街道停水停电两天，几十户饮用水见底，需送水。",
+      "summary_en": "Several households in Xiashan Subdistrict, Chaonan District, Shantou have had water and power outages for two days, with drinking water running low and needing water delivery.",
+      "original": "汕头市潮南区峡山街道 停水停电两天了 这边几十户人家 饮用水见底了 帮忙送点水过来 联系村委老陈 137****9013",
+      "retried": false,
+      "parse_failed": false,
+      "error": ""
+    }
+  },
+  {
+    "id": "E10",
+    "tag": "已脱困报平安+咨询",
+    "gold_urgency": "低",
+    "elapsed_sec": 67.6,
+    "retried": false,
+    "parse_failed": false,
+    "error": "",
+    "result": {
+      "location": "永泰县梧桐镇中埠村",
+      "people_count": 5,
+      "people_notes": "",
+      "needs": [
+        "救灾帐篷"
+      ],
+      "urgency": "低",
+      "contact": "131****4482",
+      "summary": "一家五口已撤离至县城亲戚家，询问救灾帐篷领取地点。",
+      "summary_en": "A family of five has moved to relatives' home in the county town and asks about the location to pick up disaster relief tents.",
+      "original": "报个平安！我们一家五口已经从老房子撤出来，住到县城亲戚家了，人都没事，就是想问一下村里统一发的救灾帐篷现在去哪儿领，之前登记的地址是永泰县梧桐镇中埠村，我电话131****4482。",
+      "retried": false,
+      "parse_failed": false,
+      "error": ""
+    }
+  },
+  {
+    "id": "E11",
+    "tag": "道路通行询问",
+    "gold_urgency": "低",
+    "elapsed_sec": 71.49,
+    "retried": false,
+    "parse_failed": false,
+    "error": "",
+    "result": {
+      "location": "屏南县甘棠乡",
+      "people_count": 2,
+      "people_notes": "",
+      "needs": [],
+      "urgency": "低",
+      "contact": "",
+      "summary": "拟回屏南县甘棠乡，山路塌方，询问通车及绕行路线。",
+      "summary_en": "I plan to drive back to Gantang Township, Pingnan County, and the mountain road there has collapsed; I would like to know if it is open now and if there are detour routes.",
+      "original": "问一下，明天想开车回屏南县，听说甘棠乡那段山路塌方了，请问现在通车了没有？有没有绕行路线？我这边就我和我老婆两个人，不急，谢谢。",
+      "retried": false,
+      "parse_failed": false,
+      "error": ""
+    }
+  },
+  {
+    "id": "E12",
+    "tag": "捐赠对接咨询",
+    "gold_urgency": "低",
+    "elapsed_sec": 71.68,
+    "retried": false,
+    "parse_failed": false,
+    "error": "",
+    "result": {
+      "location": "合肥市包河区淝河镇",
+      "people_count": 0,
+      "people_notes": "",
+      "needs": [
+        "饮用水",
+        "方便面"
+      ],
+      "urgency": "低",
+      "contact": "",
+      "summary": "包河区淝河镇安置点拟捐赠矿泉水与方便面，需对接送餐事宜。",
+      "summary_en": "The Ansettlement Point in Feihe Town, Baohe District, Hefei is planning to donate mineral water and instant noodles, and needs to coordinate the delivery.",
+      "original": "你好，咨询一下，我们社区在合肥市包河区淝河镇这边，想给安置点捐一批矿泉水和方便面，大概20箱，请问送到哪里、找谁对接？",
+      "retried": false,
+      "parse_failed": false,
+      "error": ""
+    }
+  }
+]

@@ -1,0 +1,55 @@
+[
+  {
+    "location": "临江市望江区滨江街道幸福里小区3号楼一楼",
+    "people_count": 4,
+    "people_notes": "两位老人，一个三岁小孩",
+    "needs": [
+      "饮用水",
+      "食物",
+      "冲锋舟"
+    ],
+    "urgency": "高",
+    "contact": "138****2167",
+    "summary": "临江市幸福里小区3号楼一楼一家四口被困，急需救援与物资。",
+    "summary_en": "A family of four is trapped on the first floor of Building 3, Xingfuli Community, in Wangjiang District, Linjiang City, and urgently needs rescue and supplies.",
+    "original": "求扩散！临江市望江区滨江街道幸福里小区3号楼一楼，我们一家四口被困，家里两位老人，还有一个三岁小孩，水已经淹到一楼半了，吃的都泡了，急需饮用水和食物，最好能有冲锋舟把老人孩子先接出去。联系电话138****2167。",
+    "retried": false,
+    "parse_failed": false,
+    "error": ""
+  },
+  {
+    "location": "青岚县玉龙镇中学操场临时安置点",
+    "people_count": 60,
+    "people_notes": "包含十几个学生，有一位老师腿部受伤",
+    "needs": [
+      "担架",
+      "急救药品",
+      "帐篷",
+      "棉被"
+    ],
+    "urgency": "高",
+    "contact": "139****8803",
+    "summary": "青岚县玉龙镇中学安置点收留60名受灾群众，需担架、急救药品及帐篷棉被。",
+    "summary_en": "Qinglan County Yulong Town Middle School temporary shelter has received 60 affected people, needing stretchers, first-aid medicines, tents and quilts.",
+    "original": "青岚县玉龙镇中学操场临时安置点求助：这边收留了大概60名受灾群众，十几个是学生，有一位老师腿部受伤，需要担架和急救药品，帐篷和棉被也不够用。联系人是我们学校后勤王老师，电话139****8803。",
+    "retried": false,
+    "parse_failed": false,
+    "error": ""
+  },
+  {
+    "location": "安澜市南桥区桂中花园7栋502",
+    "people_count": 1,
+    "people_notes": "78岁，有高血压",
+    "needs": [
+      "降压药"
+    ],
+    "urgency": "高",
+    "contact": "137****0459（邻居张阿姨）",
+    "summary": "求助者在外地，78岁高血压患者需降压药上门，现头晕严重。",
+    "summary_en": "The requester is away from home, and a 78-year-old person with hypertension needs medication delivered to their home, who is currently feeling severe dizziness.",
+    "original": "帮帮我母亲！她一个人住在安澜市南桥区桂中花园7栋502，78岁，有高血压，降压药昨天就吃完了，现在说头晕得厉害。我人在外地赶不回去，麻烦社区志愿者帮忙送药上门。联系电话137****0459（邻居张阿姨）。",
+    "retried": false,
+    "parse_failed": false,
+    "error": ""
+  }
+]

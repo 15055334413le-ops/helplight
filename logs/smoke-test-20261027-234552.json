@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-10-27T23:45:52",
+  "endpoint": "http://127.0.0.1:11434/v1",
+  "model": "spark-x2.6-4b",
+  "temperature": 0.0,
+  "max_tokens": 1024,
+  "system_prompt": "你是灾害求助信息整理助手。从求助文本中抽取信息，只输出 JSON，字段：location（地点）、people_count（人数，数字，未知填 null）、people_notes（人员构成）、needs（需求数组）、urgency（紧急程度：高/中/低）、contact（联系方式，无则 null）、summary（一句话中文摘要）、summary_en（一句话英文摘要）。",
+  "input_text": "急！芜湖市南陵县三里镇这边河水涨上来了，我家一楼进水，我和我妈还有一个三岁小孩被困在二楼，家里没吃的了，孩子有点发烧，我妈腿脚不方便走不了路。我的电话是138xxxx0000，快点来人！",
+  "elapsed_seconds": 128.44,
+  "usage": {
+    "prompt_tokens": 161,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "completion_tokens": 198,
+    "total_tokens": 359
+  },
+  "finish_reason": "stop",
+  "full_message": {
+    "role": "assistant",
+    "content": "```json\n{\n  \"location\": \"芜湖市南陵县三里镇\",\n  \"people_count\": 3,\n  \"people_notes\": \"1名成年人、1名老人（腿脚不便）、1名三岁小孩\",\n  \"needs\": [\"紧急救援\", \"食物补给\", \"儿童发烧处理\"],\n  \"urgency\": \"高\",\n  \"contact\": \"138xxxx0000\",\n  \"summary\": \"芜湖市南陵县三里镇有3人因河水上涨被困二楼，存在食物短缺、儿童发烧及老人行动不便的紧急情况，需尽快救援。\",\n  \"summary_en\": \"Three people are trapped on the second floor in Sanli Town, Nanling County, Wuhu City due to rising water, with urgent needs for rescue, food supply, and child fever treatment, as well as an elderly person with mobility issues.\"\n}\n```"
+  },
+  "raw_output": "```json\n{\n  \"location\": \"芜湖市南陵县三里镇\",\n  \"people_count\": 3,\n  \"people_notes\": \"1名成年人、1名老人（腿脚不便）、1名三岁小孩\",\n  \"needs\": [\"紧急救援\", \"食物补给\", \"儿童发烧处理\"],\n  \"urgency\": \"高\",\n  \"contact\": \"138xxxx0000\",\n  \"summary\": \"芜湖市南陵县三里镇有3人因河水上涨被困二楼，存在食物短缺、儿童发烧及老人行动不便的紧急情况，需尽快救援。\",\n  \"summary_en\": \"Three people are trapped on the second floor in Sanli Town, Nanling County, Wuhu City due to rising water, with urgent needs for rescue, food supply, and child fever treatment, as well as an elderly person with mobility issues.\"\n}\n```",
+  "parsed": {
+    "location": "芜湖市南陵县三里镇",
+    "people_count": 3,
+    "people_notes": "1名成年人、1名老人（腿脚不便）、1名三岁小孩",
+    "needs": [
+      "紧急救援",
+      "食物补给",
+      "儿童发烧处理"
+    ],
+    "urgency": "高",
+    "contact": "138xxxx0000",
+    "summary": "芜湖市南陵县三里镇有3人因河水上涨被困二楼，存在食物短缺、儿童发烧及老人行动不便的紧急情况，需尽快救援。",
+    "summary_en": "Three people are trapped on the second floor in Sanli Town, Nanling County, Wuhu City due to rising water, with urgent needs for rescue, food supply, and child fever treatment, as well as an elderly person with mobility issues."
+  },
+  "parse_error": null
+}

@@ -1,0 +1,4 @@
+# Spark-X2.6-4B (Q4_K_M GGUF, 官方 XHToken/Spark-X2.6-4B-GGUF 仓库) 导入 Ollama
+# 构建: ollama create spark-x2.6-4b -f Modelfile
+FROM ./Spark-X2.6-4B-Q4_K_M.gguf
+PARAMETER num_ctx 8192

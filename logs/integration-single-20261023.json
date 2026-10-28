@@ -1,0 +1,25 @@
+{
+  "mode": "single",
+  "example_tag": "洪涝被困",
+  "elapsed_s": 121.67,
+  "response": {
+    "result": {
+      "location": "临江市望江区滨江街道幸福里小区3号楼一楼",
+      "people_count": 4,
+      "people_notes": "两位老人，一个三岁小孩",
+      "needs": [
+        "饮用水",
+        "食物",
+        "冲锋舟"
+      ],
+      "urgency": "高",
+      "contact": "138****2167",
+      "summary": "临江市幸福里小区3号楼一楼一家四口被困，有老人小孩，急需救援。",
+      "summary_en": "A family of four is trapped on the first floor of Building 3, Xingfuli Community, in Wangjiang District, Linjiang City, with elderly and a three-year-old child, and urgently needs rescue.",
+      "original": "求扩散！临江市望江区滨江街道幸福里小区3号楼一楼，我们一家四口被困，家里两位老人，还有一个三岁小孩，水已经淹到一楼半了，吃的都泡了，急需饮用水和食物，最好能有冲锋舟把老人孩子先接出去。联系电话138****2167。",
+      "retried": false,
+      "parse_failed": false,
+      "error": ""
+    }
+  }
+}

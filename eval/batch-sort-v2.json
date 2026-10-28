@@ -1,0 +1,142 @@
+{
+  "elapsed_sec": 341.94,
+  "count": 12,
+  "input_order": [
+    "E01",
+    "E02",
+    "E03",
+    "E04",
+    "E05",
+    "E06",
+    "E07",
+    "E08",
+    "E09",
+    "E10",
+    "E11",
+    "E12"
+  ],
+  "gold_urgency": {
+    "E01": "高",
+    "E02": "高",
+    "E03": "高",
+    "E04": "高",
+    "E05": "高",
+    "E06": "中",
+    "E07": "中",
+    "E08": "中",
+    "E09": "中",
+    "E10": "低",
+    "E11": "低",
+    "E12": "低"
+  },
+  "returned": [
+    {
+      "seq": 1,
+      "urgency": "高",
+      "location": "望江县华阳镇金堤村",
+      "people_count": 3,
+      "retried": false,
+      "parse_failed": false,
+      "original": "求救！我们是望江县华阳镇金堤村的，江水漫堤了，家里房子进水快一米了，我和老伴还有刚满月的孙子三个人困在二楼下不来，手机也快没电了，麻烦派船来接我们出去，电话139****5730，快点啊！"
+    },
+    {
+      "seq": 2,
+      "urgency": "高",
+      "location": "临夏县城关镇东门巷老楼",
+      "people_count": 1,
+      "retried": false,
+      "parse_failed": false,
+      "original": "地震了 临夏县城关镇东门巷老楼塌了一半 我爸被压在柜子下面 腿动不了 一直流血 快来人 快派救护车跟消房 电话是我的152****8841"
+    },
+    {
+      "seq": 3,
+      "urgency": "高",
+      "location": "阳江市江城区城南街道海怡小区2栋一楼",
+      "people_count": 1,
+      "retried": false,
+      "parse_failed": false,
+      "original": "台风登陆了，阳江市江城区城南街道海怡小区2栋一楼，我是坐轮椅的，一个人住，地下车库的水已经漫进家里，水过脚踝了还在涨，我自己出不去，麻烦志愿者来帮我转移到安全的地方，我的电话是136****0925。"
+    },
+    {
+      "seq": 4,
+      "urgency": "高",
+      "location": "泗洪县青阳镇安置点附近",
+      "people_count": 1,
+      "retried": false,
+      "parse_failed": false,
+      "original": "寻人！我女儿今年7岁，穿黄色雨衣，在转移的时候在泗洪县青阳镇安置点附近走散了，最后看到是下午三点在镇政府门口，孩子有哮喘，我急死了，求大家帮忙留意，联系电话159****3347，王女士。"
+    },
+    {
+      "seq": 5,
+      "urgency": "高",
+      "location": "阜阳市颍上县迪沟镇堤外村",
+      "people_count": 2,
+      "retried": false,
+      "parse_failed": false,
+      "original": "转发求扩散，阜阳市颍上县迪沟镇堤外村里有一户人家，老人摔断了腿困在屋里出不来，水都到大腿了，家里好像就老两口住，具休还有没有别人不清楚，也没留电话，看到的人帮忙联系镇里的救援队去看看。"
+    },
+    {
+      "seq": 6,
+      "urgency": "中",
+      "location": "泸定县磨西镇体育馆安置点",
+      "people_count": 47,
+      "retried": false,
+      "parse_failed": false,
+      "original": "泸定县磨西镇体育馆安置点登记一下：我们这一组一共收了47个人，今晚帐篷还够，就是棉被还差20条，还有小孩子喝的奶粉没有了，麻烦协调一下，联系人李组长，电话135****7712。"
+    },
+    {
+      "seq": 7,
+      "urgency": "中",
+      "location": "六安市金安区张店镇",
+      "people_count": 200,
+      "retried": false,
+      "parse_failed": false,
+      "original": "六安市金安区张店镇的乡亲们都转移到镇中学二楼了，人都安全，就是吃的跟不上，两百多号人只有方便面，老人小孩又多，最好能送点米面和热水过来，负责人电话138****6609。"
+    },
+    {
+      "seq": 8,
+      "urgency": "中",
+      "location": "汕头市潮南区峡山街道",
+      "people_count": 0,
+      "retried": false,
+      "parse_failed": false,
+      "original": "汕头市潮南区峡山街道 停水停电两天了 这边几十户人家 饮用水见底了 帮忙送点水过来 联系村委老陈 137****9013"
+    },
+    {
+      "seq": 9,
+      "urgency": "低",
+      "location": "淮安市洪泽区高良涧街道临河小区",
+      "people_count": 1,
+      "retried": false,
+      "parse_failed": false,
+      "original": "社区登记一下：我是淮安市洪泽区高良涧街道的网格员，临河小区独居的赵奶奶82岁，家里米油快吃完了，她腿脚不便下不了楼，想请志愿者帮忙代购一些米面油送上门，不着急，电话是她儿子的133****2258。"
+    },
+    {
+      "seq": 10,
+      "urgency": "低",
+      "location": "永泰县梧桐镇中埠村",
+      "people_count": 5,
+      "retried": false,
+      "parse_failed": false,
+      "original": "报个平安！我们一家五口已经从老房子撤出来，住到县城亲戚家了，人都没事，就是想问一下村里统一发的救灾帐篷现在去哪儿领，之前登记的地址是永泰县梧桐镇中埠村，我电话131****4482。"
+    },
+    {
+      "seq": 11,
+      "urgency": "低",
+      "location": "屏南县甘棠乡",
+      "people_count": 2,
+      "retried": false,
+      "parse_failed": false,
+      "original": "问一下，明天想开车回屏南县，听说甘棠乡那段山路塌方了，请问现在通车了没有？有没有绕行路线？我这边就我和我老婆两个人，不急，谢谢。"
+    },
+    {
+      "seq": 12,
+      "urgency": "低",
+      "location": "合肥市包河区淝河镇",
+      "people_count": 0,
+      "retried": false,
+      "parse_failed": false,
+      "original": "你好，咨询一下，我们社区在合肥市包河区淝河镇这边，想给安置点捐一批矿泉水和方便面，大概20箱，请问送到哪里、找谁对接？"
+    }
+  ]
+}

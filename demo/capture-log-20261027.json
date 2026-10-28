@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-27",
+  "note": "capture.py final log write failed on PosixPath serialization; all shots/video/exports were already saved. This file was reconstructed from logs/capture-1027.log step records.",
+  "steps": [
+    {
+      "step": "shot1-home",
+      "at": "23:47:27"
+    },
+    {
+      "step": "shot2-single",
+      "at": "23:48:32",
+      "seconds": 65.1
+    },
+    {
+      "step": "shot3-batch",
+      "at": "23:50:54",
+      "seconds": 140.9,
+      "rows": 3
+    },
+    {
+      "step": "exports-saved",
+      "at": "23:50:54"
+    },
+    {
+      "step": "shot4-export",
+      "at": "23:50:57"
+    },
+    {
+      "step": "shot5-e12",
+      "at": "23:52:01",
+      "seconds": 63.8
+    },
+    {
+      "step": "shot6-health",
+      "at": "23:52:02"
+    }
+  ],
+  "video_raw": "demo/video-raw/page@31e9160c3847482bda20a1e0af5a2a32.webm (278s)"
+}
